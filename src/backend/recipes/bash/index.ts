@@ -3,19 +3,19 @@ import stdExec from '../../stdexec';
 import stdExecDocker from '../../stdexecdocker';
 import { Recipe } from '../../types';
 
-const recipe: Recipe = ({
-    key: 'java',
-    name: 'Java',
-    language: 'Java',
-    mainfile: ['index.java', 'main.java'],
-    cmmode: 'text/x-java',
+const recipe: Recipe= ({
+    key: 'bash',
+    name: 'Bash',
+    language: 'bash',
+    mainfile: ['index.sh', 'main.sh'],
+    cmmode: 'text/x-sh',
     dir: __dirname,
     exec: async ({ notebook, docker, writeStdOut, writeStdErr, writeInfo, env }) => {
 
         if (docker) {
             return stdExecDocker({
-                image: 'java:latest',
-                cmd: ['sh', '-c', 'javac -d /tmp "/code/' + notebook.mainfilename + '" && cd /tmp && java Main'],
+                image: 'bash:latest',
+                cmd: ['sh', '/code/' + notebook.mainfilename,],
                 cwd: '/code',
                 mounts: [
                     { from: notebook.absdir, to: '/code', mode: 'rw' },
@@ -24,7 +24,7 @@ const recipe: Recipe = ({
             }, writeStdOut, writeStdErr, writeInfo);
         } else {
             return stdExec({
-                cmd: ['sh', '-c', 'javac -d /tmp ' + notebook.mainfilename + ' && cd /tmp && java Main'],
+                cmd: ['sh', notebook.mainfilename],
                 cwd: notebook.absdir,
                 env,
             }, writeStdOut, writeStdErr, writeInfo);

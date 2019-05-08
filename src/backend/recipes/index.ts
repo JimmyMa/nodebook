@@ -17,6 +17,7 @@ import recipeSwift from './swift';
 import recipePlaintext from './plaintext';
 import recipeFSharp from './fsharp';
 import recipeCSharp from './csharp';
+import recipeBash from './bash';
 import { Recipe } from '../types';
 
 const recipes = [
@@ -24,21 +25,22 @@ const recipes = [
     recipeTypescript,
     recipeC,
     recipeCpp,
-    recipeCSharp,
-    recipeElixir,
-    recipeFSharp,
+    // recipeCSharp,
+    // recipeElixir,
+    // recipeFSharp,
     recipeGo,
-    recipeHaskell,
+    // recipeHaskell,
     recipeJava,
-    recipeLua,
-    recipeOCaml,
+    // recipeLua,
+    // recipeOCaml,
     recipePHP,
     recipePython3,
-    recipeR,
+    // recipeR,
     recipeRuby,
-    recipeRust,
-    recipeSwift,
-    recipePlaintext,
+    recipeBash,
+    // recipeRust,
+    // recipeSwift,
+    // recipePlaintext,
 ];
 
 const recipesByKey = new Map<string, Recipe>();

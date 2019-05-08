@@ -52,11 +52,11 @@ export async function sanitizeParameters(rawargv: string[]) {
     notebooks = resolvePath(notebooks);
 
     if (!fs.existsSync(notebooks)) {
-        throw new Error("Notebooks path does not exist.");
+        throw new Error("Notebooks" + notebooks + " path does not exist.");
     }
 
     if (!fs.statSync(notebooks).isDirectory()) {
-        throw new Error("Notebooks path is not a directory.");
+        throw new Error("Notebooks" + notebooks + "  path is not a directory.");
     }
 
     // Check for unknown parameters
