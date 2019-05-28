@@ -25,7 +25,7 @@ const recipes = [
     recipeNodeJS,
     recipeTypescript,
     recipeC,
-    recipeCpp,
+    // recipeCpp,
     // recipeCSharp,
     // recipeElixir,
     // recipeFSharp,

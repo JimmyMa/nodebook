@@ -14,7 +14,7 @@ const recipe: Recipe= ({
 
         if (docker) {
             return stdExecDocker({
-                image: 'dart:latest',
+                image: 'google/dart:latest',
                 cmd: ['dart', '/code/' + notebook.mainfilename,],
                 cwd: '/code',
                 mounts: [
