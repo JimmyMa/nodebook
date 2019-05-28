@@ -18,6 +18,7 @@ import recipePlaintext from './plaintext';
 import recipeFSharp from './fsharp';
 import recipeCSharp from './csharp';
 import recipeBash from './bash';
+import recipeDart from './dart';
 import { Recipe } from '../types';
 
 const recipes = [
@@ -38,6 +39,7 @@ const recipes = [
     // recipeR,
     recipeRuby,
     recipeBash,
+    recipeDart,
     // recipeRust,
     // recipeSwift,
     // recipePlaintext,
